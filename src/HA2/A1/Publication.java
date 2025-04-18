@@ -1,4 +1,4 @@
-package src.HA2;
+package src.HA2.A1;
 
 public class Publication {
 

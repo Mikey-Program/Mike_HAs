@@ -1,6 +1,6 @@
-package src.HA2;
+package src.HA2.A1;
 
-public class Textbook extends Book{
+public class Textbook extends Book {
     private String subject;
 
     public Textbook(String title, int year, String author, String subject) {
