@@ -11,6 +11,7 @@ public class Publication {
     }
 
     public String getInfo(){
+
         return title +", published in " +year;
     }
 

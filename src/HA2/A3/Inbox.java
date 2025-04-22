@@ -21,6 +21,7 @@ public class Inbox {
         }
         System.out.println(mails[index].getRead() + "|" + mails[index].getSubject() + "|" + mails[index].getSender() + "|" +mails[index].getDatetime());
         System.out.println(mails[index].getMessage());
+        mails[index].isRead();
     }
 
     public int countUnread(){
