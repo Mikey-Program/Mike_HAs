@@ -21,7 +21,7 @@ public class Mail {
     }
 
     public String showMail(){
-        return subject + " from " + sender + " on " +datetime+ ": " +message;
+        return this.subject + " from " + this.sender + " on " +this.datetime+ ": " +this.message;
     }
 
     public String getSender() {
