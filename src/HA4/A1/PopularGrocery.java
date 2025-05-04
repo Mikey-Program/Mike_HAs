@@ -1,4 +1,4 @@
-package src.HA4;
+package src.HA4.A1;
 
 public class PopularGrocery extends GroceryItem{
 

@@ -1,6 +1,6 @@
-package src.HA4;
+package src.HA4.A1;
 
-public class GroceryItem extends Article{
+public class GroceryItem extends Article {
 
     private boolean isPopular;
 

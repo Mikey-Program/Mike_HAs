@@ -1,6 +1,6 @@
-package src.HA4;
+package src.HA4.A1;
 
-public class Flour extends PopularGrocery{
+public class Flour extends PopularGrocery {
 
     public Flour(int discountThreshold, int householdLimit, boolean isPopular, int popularityLevel, int quantity) {
         super(discountThreshold, householdLimit, isPopular, popularityLevel, quantity);
