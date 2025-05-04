@@ -20,11 +20,15 @@ public class PopularGrocery extends GroceryItem{
     }
 
     @Override
-    public boolean isPopular(){
-        return true; //noch ändern
+    public boolean showWarning(){
+        return this.quantity > this.getHouseholdLimit();
     }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public int getQuantity() { //Darf ich den laut Aufgabenstellung erstellen?
+        return quantity;
     }
 }

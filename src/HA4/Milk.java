@@ -16,6 +16,9 @@ public class Milk extends PopularGrocery{
 
     @Override
     public int getBulkDiscount() {
-        return 12; // noch ändern
+        if(this.getQuantity() >= this.getDiscountThreshold()){ //Ist Getter hier "erlaubt"/richtig laut Aufgabenstellung?
+            return 12;
+        }
+        return 0;
     }
 }

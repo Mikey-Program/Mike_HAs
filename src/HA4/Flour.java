@@ -15,6 +15,9 @@ public class Flour extends PopularGrocery{
 
     @Override
     public int getBulkDiscount() {
-        return 5; //noch ändern
+        if(this.getQuantity() >= this.getDiscountThreshold()){
+            return 5;
+        }
+        return 0;
     }
 }

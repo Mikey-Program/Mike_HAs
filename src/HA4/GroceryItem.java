@@ -15,12 +15,12 @@ public class GroceryItem extends Article{
 
     @Override
     public int getBulkDiscount() {
-        return 0; //noch ändern
+        return 0;
     }
 
     @Override
     public boolean showWarning() {
-        return false; //noch ändern
+        return false;
     }
 
     public boolean isPopular() {
