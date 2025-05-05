@@ -1,14 +1,20 @@
 package src.HA4.A2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AnagramChecker {
     /**
      * Returns true if the two strings are anagrams of each other.
      */
-    public static boolean isAnagram (String a, String b) {
+    public static boolean isAnagram (String a, String b) { //muss man auch Sonderzeichen beachten?
 // TODO: implement using countLetters ()
-        return false;
+        int [] ha = countLetters(a);
+        int [] hb = countLetters(b);
+
+        //Gedanke: Wenn sie gleich lang sind (s.o. if-Abfrage) und alle Buchstaben gleich oft vorkommen (equals für Arrays)
+        //dann sind die Strings Anagramme
+        return Arrays.equals(ha, hb);
     }
 
     /**
@@ -16,7 +22,17 @@ public class AnagramChecker {
      */
     public static int [] countLetters (String s) {
         int [] counts = new int [26];
+        int wert = 0;
+        int index = 0;
 
+        for(int i = 0; i< s.length(); i++){
+            if(Character.isAlphabetic(s.charAt(i))) {
+               char c = Character.toLowerCase(s.charAt(i)); // macht es einen Unterschied wo die initialisiert werden und deklariert werden usw.?
+               wert = (int) c;
+               index = wert - 97;
+               counts[index]++;
+            }
+        }
         return counts;
     }
 
@@ -25,6 +41,12 @@ public class AnagramChecker {
      */
     public static void printLetterCounts (String s) {
 // TODO: implement nicely formatted output
+        int[] arr = countLetters(s);
+        char c ;
+        for(int i = 0; i < 26; i++ ){
+            c = (char) (i + 97);
+            System.out.println(c + ": " +arr[i]);
+        }
     }
 
 
@@ -37,6 +59,7 @@ public class AnagramChecker {
         String word2 = scanner.nextLine ();
 // TODO: Process the strings here (ignore spaces , case)
         System.out.println (" Are they anagrams? " + isAnagram (word1 , word2 ));
-        printLetterCounts (word1 );
+        //printLetterCounts (word1 );
+
     }
 }
