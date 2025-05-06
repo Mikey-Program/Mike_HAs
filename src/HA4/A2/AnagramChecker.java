@@ -11,8 +11,7 @@ public class AnagramChecker {
 // TODO: implement using countLetters ()
         int [] ha = countLetters(a);
         int [] hb = countLetters(b);
-
-        //Gedanke: Wenn sie gleich lang sind (s.o. if-Abfrage) und alle Buchstaben gleich oft vorkommen (equals für Arrays)
+        //Gedanke: Wenn alle Buchstaben gleich oft vorkommen (equals für Arrays)
         //dann sind die Strings Anagramme
         return Arrays.equals(ha, hb);
     }
