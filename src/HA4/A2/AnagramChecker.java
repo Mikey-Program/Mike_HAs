@@ -7,12 +7,12 @@ public class AnagramChecker {
     /**
      * Returns true if the two strings are anagrams of each other.
      */
-    public static boolean isAnagram (String a, String b) { //muss man auch Sonderzeichen beachten?
+    public static boolean isAnagram (String a, String b) { //muss man auch Sonderzeichen usw. beachten?
 // TODO: implement using countLetters ()
         int [] ha = countLetters(a);
         int [] hb = countLetters(b);
         //Gedanke: Wenn alle Buchstaben gleich oft vorkommen (equals für Arrays)
-        //dann sind die Strings Anagramme
+        //dann sind die Strings Anagramme -> Sonderzeichen usw. nicht beachtet in countLetters()
         return Arrays.equals(ha, hb);
     }
 
