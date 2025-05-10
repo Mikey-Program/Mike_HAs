@@ -4,8 +4,9 @@ public class Profile {
 
     private ShippingInfo shippingInfo;
 
-    public Profile(ShippingInfo info) {
-        this.shippingInfo = info;
+    public Profile(ShippingInfo info) throws InvalidShippingInfoException {
+        if (info == null) throw new InvalidShippingInfoException("Fehlende Versanddaten");
+        else this.shippingInfo = info;
     }
 
     public ShippingInfo getShippingInfo() {

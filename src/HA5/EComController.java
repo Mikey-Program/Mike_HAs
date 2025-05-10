@@ -1,16 +1,29 @@
 package src.HA5;
 
 public class EComController {
-    public static void main(String [] args) {
+    public static void main(String [] args) throws MissingShippingInfoException, InvalidShippingInfoException, InvalidCustomerException {
 
-        ShippingInfo info = new ShippingInfo (" Munich", 80331 , "Germany ");
+        ShippingInfo shippingInfo = null;
+        try {
+            shippingInfo = new ShippingInfo(" Munich", -80331, "Germany ");
+            Profile profile = new Profile(shippingInfo);
+            Customer customer = new Customer(profile, 123);
 
-        Profile profile = new Profile(info);
-        Customer customer = new Customer(profile, 123);
+            System.out.println(" Shipping to: " + customer.getProfile().getShippingInfo().getCity());
 
-        System.out.println (" Shipping to: " + customer.getProfile().getShippingInfo().getCity ());
+        } catch (InvalidShippingInfoException i) {
+            System.out.println("Falsche Info: " + i.getMessage());
+        } catch (MissingShippingInfoException m){
+            System.out.println("Fehlende Infos " + m.getMessage());
+        } catch (InvalidCustomerException i){
+            System.out.println("Falsche Kundendaten: " + i.getMessage());
+        } catch (Exception e){ //GPT TIPP
+            System.out.println("Anderer Fehler: " + e.getMessage());
+        }
+
     }
 
+    //Aufg. 1:
     //Fragen auf Blatt: (War nicht anwesend in VL wegen Termin - GPT u. Internet geholfen)
     //Is your code an example of dependency injection? Explain why or why not.
     // Ja es ist ein Bsp. für DI, da wir bei den Klassen Profile und Customer die Infos "von außen" bekommen und
@@ -22,4 +35,7 @@ public class EComController {
     // direkt die Stadt eines Customers gibt - indem die anderen Methoden in den Klassen immer weiter abfragen -
     // also es werden trotzdem mehrere Methoden ausgeführt, aber diesemal stehen die Methoden "ineinander" anstatt alle
     // "nacheinander" aufzurufen wie im Print-Statement
+
+    //Aufg. 2: additional Questions (Alles GPT erarbeitet - gibt es Musterlösungen? (Skript noch nicht verfügbar mit Exception zu dem Zeitpunkt)
+    // Da es GPT ist: Antworten nicht reinkopiert/ unnötig, oder?
 }
