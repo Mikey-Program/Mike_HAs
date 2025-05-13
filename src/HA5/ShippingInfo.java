@@ -7,7 +7,7 @@ public class ShippingInfo {
     private String country;
 
     public ShippingInfo(String city,int zip, String country) throws MissingShippingInfoException, InvalidShippingInfoException {
-        if(city.isEmpty()) throw new MissingShippingInfoException("Stadt sollte nicht leer sein");
+        if(city == null || city.isEmpty()) throw new MissingShippingInfoException("Stadt sollte nicht leer sein");
         this.city = city;
 
         if(zip<0) throw new InvalidShippingInfoException("Falscher Zip Code"); //wieso kann ich hier nicht einfach mit System.out.println

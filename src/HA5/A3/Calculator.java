@@ -1,11 +1,11 @@
 package src.HA5.A3;
 
 public class Calculator {
-    public static double divide(double a, double b) throws ArithmeticException{
+    public static int divide(int a, int b) throws ArithmeticException{
         return a/b;
     }
 
-    public static double divideException(double a, double b){ // muss ich hier if-throw oder try-catch verwenden?
+    public static int divideException(int a, int b){ // muss ich hier if-throw oder try-catch verwenden?
         try {
             return a/b;
         }
@@ -26,5 +26,8 @@ public class Calculator {
         }
     }
 
-    // Es kommt "infinity" als Ergebnis - ist das ok so?
+    // Zu int geändert - in Übung besprochen - um Exception zu bekommen
+
+    //Exception in der Methode zu behandeln ist besser, da man evtl. nicht darauf achtet und dann selber die Exception nicht behandelt
+    // also sollte die Methode selber damit umgehen, um Fehler zu vermeiden.
 }

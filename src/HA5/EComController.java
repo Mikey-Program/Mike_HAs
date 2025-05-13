@@ -9,7 +9,7 @@ public class EComController {
             Profile profile = new Profile(shippingInfo);
             Customer customer = new Customer(profile, 123);
 
-            System.out.println(" Shipping to: " + customer.getProfile().getShippingInfo().getCity());
+            System.out.println("Shipping to: " + customer.getProfile().getShippingInfo().getCity());
 
         } catch (InvalidShippingInfoException i) {
             System.out.println("Falsche Info: " + i.getMessage());
@@ -36,6 +36,13 @@ public class EComController {
     // also es werden trotzdem mehrere Methoden ausgeführt, aber diesemal stehen die Methoden "ineinander" anstatt alle
     // "nacheinander" aufzurufen wie im Print-Statement
 
-    //Aufg. 2: additional Questions (Alles GPT erarbeitet - gibt es Musterlösungen? (Skript noch nicht verfügbar mit Exception zu dem Zeitpunkt)
-    // Da es GPT ist: Antworten nicht reinkopiert/ unnötig, oder?
+    //Aufg. 2: additional Questions (Alles GPT erarbeitet - gibt es Musterlösungen? (Skript noch nicht verfügbar mit Exception zu dem Zeitpunkt - Konnte nicht anwesend sein in VL)
+    // Da es GPT ist: Antworten nicht reinkopieren/unnötig, oder?
+
+    //    1) What generally happens if an exception is thrown but not caught?
+    //    Wenn eine Exception nicht gefangen wird, wird sie an den Aufrufer weitergereicht (Propagation).
+    //    Findet sich auch dort kein try-catch, wird die Exception bis zur main-Methode weitergegeben.
+    //    Wird sie auch dort nicht behandelt, führt das zu einem Programmabbruch und es wird ein Stack Trace ausgegeben.
+    //    Merksatz:
+    //    Unbehandelte Exceptions = Programmabbruch + Stack Trace
 }
