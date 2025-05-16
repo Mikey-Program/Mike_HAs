@@ -12,3 +12,5 @@ public class Main {
         System.out.println (" Brightness: " + lamp. getBrightness ());
     }
 }
+
+

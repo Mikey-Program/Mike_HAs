@@ -26,8 +26,8 @@ public class Lamp implements Switchable, Dimmable{
 
     @Override
     public void setBrightness(int level) {
-        if(level <=0 || level > Dimmable.MAX_BRIGHTNESS){
-            System.out.println("Falsche Angabe der Helligkeit!");
+        if(level <=0 || level > Dimmable.MAX_BRIGHTNESS || !this.on ){
+            System.out.println("Falsche Angabe der Helligkeit oder Lampe aus!");
         } else {
             this.brightness = level;
         }
@@ -38,12 +38,6 @@ public class Lamp implements Switchable, Dimmable{
         return this.brightness;
     }
 
-    @Override
-    public void dimToHalf() {
-        if(this.isOn()){
-            this.brightness = Dimmable.MAX_BRIGHTNESS/2;
-        } else {
-            System.out.println("Erst Lampe anmachen");
-        }
-    }
+    //dimToHalf muss nicht implementiert werden, da es default im Interface schon ist - es hat schon eine Implementierung
+    // -> die Bedingungen werden in setBrightness kontrolliert
 }

@@ -8,5 +8,7 @@ public interface Dimmable {
 
     int getBrightness();
 
-    void dimToHalf();
+    default void dimToHalf() {
+        setBrightness(MAX_BRIGHTNESS/2);
+    }
 }

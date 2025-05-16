@@ -7,7 +7,7 @@ public class Milk extends PopularGrocery{
     }
 
     public Milk(int quantity, int discountThreshold, int popularityLevel){
-        super();
+        super(popularityLevel);
         this.setDiscountThreshold(discountThreshold);
         this.setQuantity(quantity);
         this.setHouseholdLimit(20);
@@ -16,9 +16,6 @@ public class Milk extends PopularGrocery{
 
     @Override
     public int getBulkDiscount() {
-        if(this.getQuantity() >= this.getDiscountThreshold()){ //Ist Getter hier "erlaubt"/richtig laut Aufgabenstellung?
-            return 12;
-        }
-        return 0;
+        return (getQuantity() >= getDiscountThreshold())? 12 : 0;
     }
 }

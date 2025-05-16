@@ -21,19 +21,33 @@ public class AnagramChecker {
      */
     public static int [] countLetters (String s) {
         int [] counts = new int [26];
-        int wert = 0;
-        int index = 0;
 
         for(int i = 0; i< s.length(); i++){
-            if(Character.isAlphabetic(s.charAt(i))) {
-               char c = Character.toLowerCase(s.charAt(i)); // macht es einen Unterschied wo die initialisiert werden und deklariert werden usw.?
-               wert = (int) c;
-               index = wert - 97;
-               counts[index]++;
+            char c = Character.toLowerCase(s.charAt(i));
+            if(Character.isAlphabetic(c)) {
+                int index = c - 97;
+                counts[index]++;
             }
         }
         return counts;
     }
+
+    //Erste Version, vor Feedback:
+//    public static int [] countLetters (String s) {
+//        int [] counts = new int [26];
+//        int wert = 0;
+//        int index = 0;
+//
+//        for(int i = 0; i< s.length(); i++){
+//            char c = Character.toLowerCase(s.charAt(i));
+//            if(Character.isAlphabetic(c)) {
+//               wert = (int) c;
+//               index = wert - 97;
+//               counts[index]++;
+//            }
+//        }
+//        return counts;
+//    }
 
     /**
      * Print only letters that appear in the string with their counts.
@@ -43,8 +57,10 @@ public class AnagramChecker {
         int[] arr = countLetters(s);
         char c ;
         for(int i = 0; i < 26; i++ ){
-            c = (char) (i + 97);
-            System.out.println(c + ": " +arr[i]);
+            if(arr[i] != 0) {
+                c = (char) (i + 97);
+                System.out.println(c + ": " + arr[i]);
+            }
         }
     }
 
@@ -58,7 +74,7 @@ public class AnagramChecker {
         String word2 = scanner.nextLine ();
 // TODO: Process the strings here (ignore spaces , case)
         System.out.println (" Are they anagrams? " + isAnagram (word1 , word2 ));
-        //printLetterCounts (word1 );
+        printLetterCounts (word1 );
 
     }
 }
