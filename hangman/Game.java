@@ -58,7 +58,7 @@ public class Game extends JFrame {
         });
 
         // You will implement this method
-        processInput ();
+        inputField.addActionListener(e -> processInput());
         setVisible(true);
     }
 
