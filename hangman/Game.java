@@ -72,7 +72,7 @@ public class Game extends JFrame {
         inputField.requestFocus ();
     }
 
-    // Updates the word , attempts , and time on the screen
+    // Updates the word, attempts, and time on the screen
     protected void updateDisplay () {
         StringBuilder display = new StringBuilder ();
         for (char c : currentWord.toCharArray ()) {
@@ -140,6 +140,15 @@ public class Game extends JFrame {
             System.out.println("Du hast verloren!");
         }
         inputField.setEnabled(false);
+
+        try{
+            Thread.sleep(3000); //sorgt dafür, dass der Thread schläft für gewisse Millisekunden -
+            // will auch sehen, dass man gewinnt und nicht direkt ausmachen - aber sieht iwi schlecht aus, wenn man es ausführt
+        } catch (InterruptedException e){
+            e.printStackTrace();
+            return;
+        }
+
         System.exit(0); //oder dispose() ? GPT beides empfohlen - ich weiß nicht was "best practice" usw. ist
         // und was hier erwartet wird.
     }
