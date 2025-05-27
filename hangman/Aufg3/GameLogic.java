@@ -2,7 +2,7 @@ package hangman.Aufg3;
 
 public interface GameLogic {
 
-    void handelGuess(char guess);
+    void handleGuess(char guess);
 
     boolean hasWon();
 

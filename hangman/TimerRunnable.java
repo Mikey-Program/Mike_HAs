@@ -14,11 +14,11 @@ public class TimerRunnable implements Runnable {
 
     @Override
     public void run() {
-    // TODO: Implement the countdown loop
+    // Implement the countdown loop
     // - Decrease timeLeft every second
     // - Update the time label using SwingUtilities.invokeLater ()
     // - End the game if time runs out
-        while (game.timeLeft >0){
+        while (game.timeLeft >0 && game.timerRunning){
             game.timeLeft--;
 
             // GUI-Update sicher machen:

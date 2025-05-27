@@ -91,7 +91,7 @@ public class Game extends JFrame {
     /* Task 1: Add ActionListener for keyboard input oninputField and process the input */
     public void processInput () {
         String s = inputField.getText().toLowerCase();
-        inputField.setText(""); //GPT Vorschlag - ok?
+        inputField.setText("");
 
         if(s.length() !=1 || !Character.isLetter(s.charAt(0))){
             System.out.println("Please enter exactly one letter.");
@@ -117,7 +117,7 @@ public class Game extends JFrame {
             guessedLetters.add(guess);
             updateDisplay();
             if(hasWon()){
-                endGame(hasWon());
+                endGame(true);
             }
         }
     }

@@ -1,6 +1,9 @@
 package hangman.Aufg3;
 
+import hangman.Timer;
 import hangman.TimerRunnable;
+
+import javax.swing.*;
 
 public class HangmanGame extends GameGUI implements GameLogic, TimerLogic {
 
@@ -13,7 +16,7 @@ public class HangmanGame extends GameGUI implements GameLogic, TimerLogic {
     }
 
     @Override
-    protected void handleGuess(char guess) {
+    public void handleGuess(char guess) {
         if(currentWord.indexOf(guess) == -1){
             attemptsLeft--;
             System.out.println("Leider falsch geraten");
@@ -31,12 +34,6 @@ public class HangmanGame extends GameGUI implements GameLogic, TimerLogic {
                 endGame(hasWon());
             }
         }
-    }
-
-
-    @Override
-    public void handelGuess(char guess) {
-        //IntelliJ will, dass ich diese Methode zweimal habe - wieso?
     }
 
     @Override
@@ -74,5 +71,12 @@ public class HangmanGame extends GameGUI implements GameLogic, TimerLogic {
         timerRunning=true;
         timerThread = new Thread(new TimerRunnableHangman(this));
         timerThread.start();
+    }
+
+    public static void main(String[] args) {
+
+        SwingUtilities.invokeLater (() -> {
+            new HangmanGame();
+        });
     }
 }
