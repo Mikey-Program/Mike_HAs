@@ -1,5 +1,7 @@
 package src.HA8;
 
+//aufgabe 1 + 2 zusammen gelassen, da sie aufeinander Aufbauen
+
 public class Main {
 
     public static void main(String [] args) {
