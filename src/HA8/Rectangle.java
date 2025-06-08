@@ -14,8 +14,9 @@ public class Rectangle extends Shape{
         return this.width * this.length;
     }
 
+    //to String Methode an jeweilige Aufg angepasst; Aufg 1 und Aufg 3 -> evtl. muss angepasst werden
     @Override
     public String toString() {
-        return "Rectangle (" + getArea()+ ")";
+        return "Rectangle: width=" +width + ", length=" +length;
     }
 }

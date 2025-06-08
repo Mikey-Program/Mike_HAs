@@ -13,8 +13,9 @@ public class Circle extends Shape{
         return this.radius * this.radius * Math.PI;
     }
 
+    //to String Methode an jeweilige Aufg angepasst; Aufg 1 und Aufg 3 -> evtl. muss angepasst werden
     @Override
     public String toString() {
-        return "Circle (" + getArea() +")";
+        return "Circle: radius=" + radius;
     }
 }
