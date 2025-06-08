@@ -2,9 +2,9 @@ package src.HA8;
 
 public class Rectangle extends Shape{
 
-    private int width, length;
+    private double width, length;
 
-    public Rectangle(int width, int length) {
+    public Rectangle(double width, double length) {
         this.width = width;
         this.length = length;
     }

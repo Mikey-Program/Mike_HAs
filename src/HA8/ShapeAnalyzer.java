@@ -33,6 +33,7 @@ public class ShapeAnalyzer {
         for(T s : shapes){
             if(!grouped.containsKey(s.getClass().getSimpleName())){
                 grouped.put(s.getClass().getSimpleName(), new ArrayList<>());
+                grouped.get((s.getClass().getSimpleName())).add(s);
             } else {
                 grouped.get((s.getClass().getSimpleName())).add(s);
             }

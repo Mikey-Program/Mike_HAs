@@ -2,9 +2,9 @@ package src.HA8;
 
 public class Circle extends Shape{
 
-    private int radius;
+    private double radius;
 
-    public Circle(int radius) {
+    public Circle(double radius) {
         this.radius = radius;
     }
 
