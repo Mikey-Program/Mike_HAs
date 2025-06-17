@@ -42,6 +42,8 @@ public class PersistentShapeManager {
             // Absichtlich nichts schreiben → Datei wird geleert
         } catch (IOException e) {
             System.err.println("Fehler beim Leeren der Datei: " + e.getMessage());
+        } catch (Exception e){
+            System.err.println("Unerwarteter Fehler " + e.getMessage());
         }
     }
 }

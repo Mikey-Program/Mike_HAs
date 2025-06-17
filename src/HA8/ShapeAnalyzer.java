@@ -37,7 +37,7 @@ public class ShapeAnalyzer {
             } else {
                 grouped.get((s.getClass().getSimpleName())).add(s);
             }
-        }
+        } // geht kürzer!
         return grouped;
     }
 }
