@@ -34,14 +34,18 @@ public class Main {
         //Aufgabe 3: Streams and Comparators
         List<Movie> movies = List.of(
                 new Movie("Road House", 7.2, 2005),
-                new Movie("Avengers", 8.5, 2015),
+                new Movie("The Dark Knight", 9.0, 2008),
+                new Movie("Inception", 8.8, 2010),
+                new Movie("Interstellar", 8.6, 2014),
+                new Movie("Avengers 2", 8.5, 2015),
                 new Movie("The Creator", 9, 2023),
                 new Movie("Blood & Sinners", 10, 2025)
         );
 
         movies.stream()
                 .filter(m -> m.getRating() >= 8.5)  // nur 2. Jahrgang
-                .sorted(Comparator.comparing(Movie::getRating)) // alphabetisch nach Name
+                .sorted(Comparator.comparing(Movie::getYear) // aufsteigend nach Jahr nach Name
+                        .thenComparing(Comparator.comparing(Movie::getRating).reversed())) // absteigend nach Rating
                 .forEach(System.out::println);  // ausgeben
     }
 }
