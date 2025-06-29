@@ -1,0 +1,12 @@
+# IntelliJ & PyCharm
+.idea/
+out/
+
+# Python
+python_HAs/.venv/
+__pycache__/
+*.pyc
+
+# Textdateien (falls nicht erwünscht im Repo)
+words.txt
+shapes.txt

@@ -26,6 +26,7 @@ public class Main {
                 student.getName() + " studies " + student.getMajor() + " in Year " + student.getYear();
 
         Student s = new Student("Alice", "Physics", 2);
+
         System.out.println(shorter.format(s));
         System.out.println(detailed.format(s));
 
@@ -33,10 +34,11 @@ public class Main {
 
         //Aufgabe 3: Streams and Comparators
         List<Movie> movies = List.of(
-                new Movie("Road House", 7.2, 2005),
+                new Movie("Road House", 6.7, 1989),
                 new Movie("The Dark Knight", 9.0, 2008),
                 new Movie("Inception", 8.8, 2010),
                 new Movie("Interstellar", 8.6, 2014),
+                new Movie("The Equalizer", 8.2, 2014),
                 new Movie("Avengers 2", 8.5, 2015),
                 new Movie("The Creator", 9, 2023),
                 new Movie("Blood & Sinners", 10, 2025)
